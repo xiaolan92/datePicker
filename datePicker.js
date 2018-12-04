@@ -7,15 +7,16 @@ class GetMonthDay {
     }
 
     /**
-     *
-     * @return {number}  返回月份第一天的星期数
+     * @method getFirstDayWeekDay  返回月份第一天的星期数
+     * @return {number}
      */
     getFirstDayWeekDay (){
         return new Date(this.year,this.month - 1,1).getDay();
     }
 
     /**
-     * @return {number} 返回月份最后一天的日期
+     * @method  getLastDay 返回月份最后一天的日期
+     * @return {number}
      */
     getLastDay (){
         return new Date(this.year,this.month,0).getDate();
@@ -23,8 +24,8 @@ class GetMonthDay {
     }
 
     /**
-     *
-     * @return {number} 返回月份最后一天的星期数
+     * @method getLastDayWeekDay  返回月份最后一天的星期数
+     * @return {number}
      */
     getLastDayWeekDay (){
         return new Date(this.year,this.month,0).getDay();
@@ -32,8 +33,8 @@ class GetMonthDay {
     }
 
     /**
-     *
-     * @return {number} 返回上一月份最后一天的日期
+     * @method  getLastDayOfPreMonth 返回上一月份最后一天的日期
+     * @return {number}
      */
     getLastDayOfPreMonth (){
         /* 当前月的第 0 天就是上个月的最后一天 */
@@ -41,6 +42,11 @@ class GetMonthDay {
 
 
     }
+
+    /**
+     * @method getLayout 日期处理逻辑
+     * @return {Array}
+     */
     getLayout (){
         let ret = [];
         /* 6行7列  */
@@ -73,7 +79,11 @@ class GetMonthDay {
             });
 
         }
-        return ret;
+        return {
+            ret,
+            year:this.year,
+            month:this.month
+        };
 
     }
 
