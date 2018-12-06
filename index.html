@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <title>datePicker</title>
     <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
         .datePicker{
             width:240px;
             height:240px;
-            margin:30px auto;
+            position:absolute;
+            top:80px;
+            left:100px;
             display:grid;
             grid-template-rows:45px 30px auto;
-            background-color:aquamarine;
+            background-color:rgba(183,170,43,0.5);
             box-shadow:1px 1px 15px  black;
         }
         .datePicker .datePicker_header{
@@ -43,6 +49,13 @@
             height:100%;
             line-height:1.7;
             text-align:center;
+            color:rgba(67,67,67,0.4);
+        }
+        .datePicker_body span.current_month_light{
+            color:rgb(67,67,67);
+        }
+        .datePicker_body span.current_day_light{
+            background-color:rgb(50,177,108);
         }
         .datePicker_body span:hover{
             background-color:grey;
@@ -52,7 +65,6 @@
     </style>
 </head>
 <body>
-
 <div class="datePicker">
     <!--<header class="datePicker_header">
         <div class="nav_left">&lt;</div>
@@ -119,7 +131,10 @@
 <script src="./datePicker.js"></script>
 <script src="./rendDom.js"></script>
 <script>
-    // console.log(new GetMonthDay().getLayout());
+let datePicker = new Renddom(".datePicker");
+  datePicker.addEvent();
+
+
 </script>
 
 
