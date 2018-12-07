@@ -1,4 +1,4 @@
-* ###用法
+* ### 用法
 
 ```
 <script src="./getMonthDay.js"></script>
